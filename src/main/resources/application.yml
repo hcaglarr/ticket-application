@@ -1,0 +1,67 @@
+server:
+  port: 8080
+  http2:
+    enabled: true
+  error:
+    whitelabel:
+      enabled: false
+
+spring:
+  application:
+    name: ticket-application
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/postgres}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:root}
+    driver-class-name: ${DB_DRIVER_CLASS_NAME:org.postgresql.Driver}
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+    defer-datasource-initialization: true
+  sql:
+    init:
+      username: ${DB_USERNAME:postgres}
+      password: ${DB_PASSWORD:root}
+      mode: always
+      schema-locations: classpath:sql/user.sql
+    properties:
+      hibernate:
+        format_sql: true
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+validation:
+  message:
+    notnull:
+      password: Password cannot be empty
+      username: Username cannot be empty
+      email: Username cannot be empty
+      account-non-expired: Account non expired cannot be empty
+      account-non-locked: Account non locked cannot be empty
+      credentials-non-expired: Credentials non expired cannot be empty
+      enabled: Enabled cannot be empty
+      name: Role name cannot be empty
+      permission: Permission name cannot be empty
+    pattern:
+      password: Your password must be at least 7 characters and at most 64 characters, letters and numbers and at least one of these must be used. @#$%^&+=
+      username: Your username must be at least 7 characters and at most 64 characters, letters and numbers and at least one of these must be used. a-z,A-Z,0-9
+      email: Your email must be at least 8 characters and at most 128 characters,
+      account-non-expired: Please check the account not expired field again.
+      account-non-locked: Please check the account not expired field again.
+      credentials-non-expired: Please check the credentials field again.
+      enabled: Please check the enabled field again.
+      name: Please check the role name field again.
+      permission: Please check the permission name field again.
+    size:
+      password: It can be a minimum of 8 and a maximum of 64 characters.
+      username: It can be a minimum of 8 and a maximum of 64 characters.
+      email: It can be a minimum of 8 and a maximum of 128 characters.
+      name: It can be a minimum of 2 and a maximum of 64 characters.
+      permission: It can be a minimum of 2 and a maximum of 64
+    email:
+      email: Check your email again.
+
+
+

@@ -1,0 +1,38 @@
+* {
+    font-size: 1.10rem !important;
+}
+
+#bus {
+    height: 244px;
+}
+.nav-link:hover {
+    background-color: rgb(252, 249, 249) !important;
+    cursor: pointer;
+    border: 0.5px solid rgb(250, 246, 246);
+}
+
+.nav-link {
+    border: 0.5px solid transparent;
+}
+
+.elevation-z6 {
+    box-shadow: 0 3px 5px -1px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
+}
+
+.flex-row {
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -o-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+.form-check-input:checked {
+    background-color: rgb(10, 136, 79) !important;
+    border-color: #198754 !important;
+}
+
+.mt-6 {
+    margin-top: 3.7rem!important;
+}
+
