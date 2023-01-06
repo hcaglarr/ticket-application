@@ -34,10 +34,12 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
+        <bootstrap.version>5.2.3</bootstrap.version>
         <org.projectlombok.version>1.18.16</org.projectlombok.version>
         <org.mapstruct.version>1.5.3.Final</org.mapstruct.version>
         <maven-enforcer.require-java.version>[11,)</maven-enforcer.require-java.version>
         <maven-enforcer.require-maven.version>[3.5,)</maven-enforcer.require-maven.version>
+        <spring-security-taglibs.version>5.7.3</spring-security-taglibs.version>
         <javax.servlet.version>1.2</javax.servlet.version>
         <tomcat-embed-jasper.version>9.0.69</tomcat-embed-jasper.version>
     </properties>
@@ -64,6 +66,16 @@
             <version>${project.parent.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+            <version>${spring-security-taglibs.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
             <version>${project.parent.version}</version>
@@ -85,6 +97,11 @@
             <groupId>org.mapstruct</groupId>
             <artifactId>mapstruct</artifactId>
             <version>${org.mapstruct.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>${bootstrap.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
